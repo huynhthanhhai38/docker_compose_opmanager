@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  opmanager:
+    image: babim/opmanager:latest
+    container_name: opmanager
+    ports:
+      - "8061:8061"
+    volumes:
+      - opmanager_data:/opt/ManageEngine
+      - ./opmanager/data:/data
+      - ./opmanager/logs:/logs
+    restart: always
+
+volumes:
+  opmanager_data:
